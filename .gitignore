@@ -24,7 +24,10 @@ hs_err_pid*
 
 # IDE
 .idea/
-*.iml
+.iml
 
 # Maven
 target/
+
+# Mac
+.DS_Store
