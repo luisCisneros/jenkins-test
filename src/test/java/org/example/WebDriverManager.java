@@ -32,8 +32,10 @@ public class WebDriverManager {
     public WebDriver setUpDriver() {
         logger.info("Properties file located at: {}", PROPERTIES_PATH);
         Properties properties = getProperties(PROPERTIES_PATH);
-        url = properties.getProperty("url");
-        long timeout = Long.parseLong(properties.getProperty("timeout.in.seconds"));
+//        url = properties.getProperty("url");
+        url = System.getProperty("url") != null ? System.getProperty("url") : properties.getProperty("url") ;
+//        long timeout = Long.parseLong(properties.getProperty("timeout.in.seconds"));
+        long timeout = System.getProperty("timeout") != null ? Long.parseLong(System.getProperty("timeout")) : Long.parseLong(properties.getProperty("timeout.in.seconds"));
         boolean maximizeWindow = Boolean.parseBoolean(properties.getProperty("maximize.window"));
         driver = selectWebDriver(properties);
         driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);

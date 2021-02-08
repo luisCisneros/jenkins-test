@@ -1,4 +1,4 @@
-@us-main
+@all @puppies
 Feature: Main puppies website functionality
 
   Background: Navigate to puppies.herokuapp website
