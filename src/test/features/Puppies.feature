@@ -1,10 +1,10 @@
-@all @puppies
+@all @us01
 Feature: Main puppies website functionality
 
   Background: Navigate to puppies.herokuapp website
     Given user is on puppies.herokuapp landing page
 
-  @us01 @smoke
+  @ts01 @smoke
   Scenario: 1. Adopt one puppy
     As puppy site user, I want to adopt one puppy from puppy list.
 
@@ -19,7 +19,7 @@ Feature: Main puppies website functionality
     Then I should be redirected to the homepage
     And the message "Thank you for adopting a puppy!" should be displayed
 
-  @us02
+  @ts02
   Scenario: 2. Adopt two puppies
     As puppy site user, I want to adopt two puppies from puppy list.
 
@@ -36,7 +36,7 @@ Feature: Main puppies website functionality
     Then I should be redirected to the homepage
     And the message "Thank you for adopting a puppy!" should be displayed
 
-  @us03 @smoke
+  @ts03 @smoke
   Scenario: 4. Two puppies adoption correct amount
     As puppy site user, I want to see the correct amount of my purchase.
 
@@ -46,14 +46,14 @@ Feature: Main puppies website functionality
     When I add them to my shopping cart
     Then total sum of the cost of the puppies must be displayed on the Shopping Cart page
 
-  @us04
+  @ts04
   Scenario: 6. Puppies list pagination
     As puppy site user, I want to see maximum 4 puppies per page
 
     When I navigate among all the views of the list
     Then At most 4 records should be displayed on each puppy list
 
-  @us05 @smoke
+  @ts05 @smoke
   Scenario: 7. Puppies list displayed correctly
     As puppy site user, I want to see displayed in each puppy record of the puppies list
     the name, breed and sex of the puppy.
@@ -61,7 +61,7 @@ Feature: Main puppies website functionality
     When I navigate among all the views of the list
     Then each puppy record should display the name, breed and sex
 
-  @us06
+  @ts06
   Scenario: 9. Empty shopping cart
     As puppy site user, I want to empty my shopping cart before purchase.
 
@@ -73,7 +73,7 @@ Feature: Main puppies website functionality
     Then I should be redirected to the homepage
     And the message "Your car is currently empty" should be displayed
 
-  @us07
+  @ts07
   Scenario: 10. Page menu
     Page should contain 6 items menu.
 
