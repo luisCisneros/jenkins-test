@@ -5,22 +5,22 @@ Feature: Main puppies website functionality
     Given user is on puppies.herokuapp landing page
 
   @ts01 @smoke
-  Scenario: 1. Adopt one puppy
+  Scenario: Adopt one puppy
     As puppy site user, I want to adopt one puppy from puppy list.
 
     Given I select the puppy named "Hanna2" by clicking on View Details
     And click on "Adopt Me!" on "Puppy Details" page
     And click on "Complete the Adoption" on "Shopping Cart" page
     When I place the order with the following details:
-    | name     | John Wick                  |
-    | address  | 2345, 5th Avenue, New York |
-    | email    | john.wick@gmail.com        |
-    | pay_type | Credit card                |
+    | name     | John Wick                     |
+    | address  | 10005, 82 Beaver St, New York |
+    | email    | john.wick@thecontinental.org  |
+    | pay_type | Credit card                   |
     Then I should be redirected to the homepage
     And the message "Thank you for adopting a puppy!" should be displayed
 
   @ts02
-  Scenario: 2. Adopt two puppies
+  Scenario: Adopt two puppies
     As puppy site user, I want to adopt two puppies from puppy list.
 
     Given I select the puppy named "Brook" by clicking on View Details
@@ -29,15 +29,15 @@ Feature: Main puppies website functionality
     And select the puppy named "Hanna2" by clicking on View Details
     And navigate to Checkout page
     When I place the order with the following details:
-      | name     | John Wick                  |
-      | address  | 2345, 5th Avenue, New York |
-      | email    | john.wick@gmail.com        |
-      | pay_type | Credit card                |
+      | name     | John Wick                     |
+      | address  | 10005, 82 Beaver St, New York |
+      | email    | john.wick@thecontinental.org  |
+      | pay_type | Credit card                   |
     Then I should be redirected to the homepage
     And the message "Thank you for adopting a puppy!" should be displayed
 
   @ts03 @smoke
-  Scenario: 4. Two puppies adoption correct amount
+  Scenario: Two puppies adoption correct amount
     As puppy site user, I want to see the correct amount of my purchase.
 
     Given I want to adopt the following puppies:
@@ -47,14 +47,14 @@ Feature: Main puppies website functionality
     Then total sum of the cost of the puppies must be displayed on the Shopping Cart page
 
   @ts04
-  Scenario: 6. Puppies list pagination
+  Scenario: Puppies list pagination
     As puppy site user, I want to see maximum 4 puppies per page
 
     When I navigate among all the views of the list
     Then At most 4 records should be displayed on each puppy list
 
   @ts05 @smoke
-  Scenario: 7. Puppies list displayed correctly
+  Scenario: Puppies list displayed correctly
     As puppy site user, I want to see displayed in each puppy record of the puppies list
     the name, breed and sex of the puppy.
 
@@ -62,7 +62,7 @@ Feature: Main puppies website functionality
     Then each puppy record should display the name, breed and sex
 
   @ts06 @wip
-  Scenario: 9. Empty shopping cart
+  Scenario: Empty shopping cart
     As puppy site user, I want to empty my shopping cart before purchase.
 
     Given I want to adopt the following puppies:
@@ -74,7 +74,7 @@ Feature: Main puppies website functionality
     And the message "Your car is currently empty" should be displayed
 
   @ts07 @wip
-  Scenario: 10. Page menu
+  Scenario: Page menu
     Page should contain 6 items menu.
 
     Then The following menu items should be displayed on the Landing page:
