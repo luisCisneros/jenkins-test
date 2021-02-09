@@ -61,7 +61,7 @@ Feature: Main puppies website functionality
     When I navigate among all the views of the list
     Then each puppy record should display the name, breed and sex
 
-  @ts06
+  @ts06 @wip
   Scenario: 9. Empty shopping cart
     As puppy site user, I want to empty my shopping cart before purchase.
 
@@ -73,7 +73,7 @@ Feature: Main puppies website functionality
     Then I should be redirected to the homepage
     And the message "Your car is currently empty" should be displayed
 
-  @ts07
+  @ts07 @wip
   Scenario: 10. Page menu
     Page should contain 6 items menu.
 
