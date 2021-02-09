@@ -166,8 +166,8 @@ public class PuppiesSteps {
             List<WebElement> puppiesRecords = landingPage.getPuppiesRecords();
             for (WebElement record : puppiesRecords) {
                 WebElement name = record.findElement(By.cssSelector(".name h3"));
-                WebElement breed = record.findElement(By.xpath("//div[@class='details']//h4[1]"));
-                WebElement sex = record.findElement(By.xpath("//div[@class='details']//h4[2]"));
+                WebElement breed = record.findElement(By.cssSelector("div.details h4:nth-child(1)"));
+                WebElement sex = record.findElement(By.cssSelector("div.details h4:nth-child(2)"));
                 logger.debug("[Name: {}]\t[Breed: {}]\t[Sex: {}]", name.getText(), breed.getText(), sex.getText());
                 assertTrue(name.isDisplayed());
                 assertTrue(breed.isDisplayed());
