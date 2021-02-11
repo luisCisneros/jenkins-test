@@ -1,6 +1,7 @@
 package org.example;
 
 import io.cucumber.java.Scenario;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
@@ -48,9 +49,11 @@ public class WebDriverManager {
 
     public void teardown(Scenario scenario) {
         if (scenario.isFailed()) {
+            logger.info("Scenario failed. Proceeding to take screenshot...");
             byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             String testName = scenario.getName();
             scenario.attach(screenshot, "image/png", testName);
+            logger.info("Screenshot attached");
         }
         driver.quit();
     }
@@ -61,34 +64,33 @@ public class WebDriverManager {
             properties.load(fileInputStream);
         } catch (IOException e) {
             logger.error(e.getMessage());
+            e.printStackTrace();
         }
         return properties;
     }
 
     private WebDriver selectWebDriver(Properties properties) {
-        String browser = System.getProperty("browser");
-        if (browser == null) {
-            browser = properties.getProperty("browser");
-        }
+        String browser = System.getProperty("browser") != null ? System.getProperty("browser") : properties.getProperty("browser");
         String chromeDriverLocation = properties.getProperty("chrome.driver.location");
         String firefoxDriverLocation = properties.getProperty("firefox.driver.location");
+        WebDriver webDriver;
         switch (browser.toLowerCase()) {
             case "chrome":
                 System.setProperty("webdriver.chrome.driver", chromeDriverLocation);
-                driver = new ChromeDriver();
+                webDriver = new ChromeDriver();
                 break;
             case "firefox":
                 System.setProperty("webdriver.gecko.driver", firefoxDriverLocation);
-                driver = new FirefoxDriver();
+                webDriver = new FirefoxDriver();
                 break;
             default:
                 logger.warn("Browser provided [{}] is either empty or incorrect. Proceeding with Firefox...", browser);
                 System.setProperty("webdriver.gecko.driver", firefoxDriverLocation);
-                driver = new FirefoxDriver();
+                webDriver = new FirefoxDriver();
                 browser = "firefox";
                 break;
         }
-        logger.info("{} browser will be used for testing", browser);
-        return driver;
+        logger.info("{} browser will be used for testing", StringUtils.capitalize(browser));
+        return webDriver;
     }
 }

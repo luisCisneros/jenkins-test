@@ -87,7 +87,7 @@ public class PuppiesSteps {
         assertEquals(expectedMessage, actualMessage);
     }
 
-    @Then("The following menu items should be displayed on the Landing page:")
+    @Then("the following menu items should be displayed on the Landing page:")
     public void theFollowingMenuItemsShouldBeDisplayed(List<String> expectedMenuItems) {
         LandingPage landingPage = new LandingPage(driver);
 //        List<WebElement> navMenuItems = landingPage.getNavigationMenuLinks();
@@ -140,7 +140,7 @@ public class PuppiesSteps {
         assertEquals(puppiesSum, actualTotal.getText());
     }
 
-    @Then("At most {int} records should be displayed on each puppy list")
+    @Then("at most {int} records should be displayed on each puppy list")
     public void atMostRecordsShouldBeDisplayedOnEachPuppyList(int maxNumberOfRecords) {
         landingPage = new LandingPage(driver);
         boolean isNextPageEnabled = false;

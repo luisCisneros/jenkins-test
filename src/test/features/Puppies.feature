@@ -51,7 +51,7 @@ Feature: Main puppies website functionality
     As puppy site user, I want to see maximum 4 puppies per page
 
     When I navigate among all the views of the list
-    Then At most 4 records should be displayed on each puppy list
+    Then at most 4 records should be displayed on each puppy list
 
   @ts05 @smoke
   Scenario: Puppies list displayed correctly
@@ -77,12 +77,11 @@ Feature: Main puppies website functionality
   Scenario: Page menu
     Page should contain 6 items menu.
 
-    Then The following menu items should be displayed on the Landing page:
+    Then the following menu items should be displayed on the Landing page:
     | Adopt a Puppy   |
     | Learn           |
     | Animal Shelters |
     | Classifieds     |
     | Message Boards  |
     | Pet News        |
-
 
