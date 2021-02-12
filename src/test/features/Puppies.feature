@@ -8,7 +8,7 @@ Feature: Main puppies website functionality
   Scenario: Adopt one puppy
     As puppy site user, I want to adopt one puppy from puppy list.
 
-    Given I select the puppy named "Hanna" by clicking on View Details
+    Given I select the puppy named "Hanna2" by clicking on View Details
     And click on "Adopt Me!" on "Puppy Details" page
     And click on "Complete the Adoption" on "Shopping Cart" page
     When I place the order with the following details:
