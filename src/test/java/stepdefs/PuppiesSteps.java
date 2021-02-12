@@ -51,6 +51,7 @@ public class PuppiesSteps {
             viewDetails.click();
         } else {
             String message = String.format("Could not click on View Details. Verify that [%s] is a valid puppy name", puppy);
+            logger.error(message);
             throw new RuntimeException(message);
         }
     }
