@@ -26,7 +26,7 @@ Feature: Main puppies website functionality
     Given I select the puppy named "Brook" by clicking on View Details
     And click on "Adopt Me!" on "Puppy Details" page
     And click on "Adopt Another Puppy" on "Shopping Cart" page
-    And select the puppy named "Hanna2" by clicking on View Details
+    And select the puppy named "Hanna" by clicking on View Details
     And navigate to Checkout page
     When I place the order with the following details:
       | name     | John Wick                     |
@@ -42,7 +42,7 @@ Feature: Main puppies website functionality
 
     Given I want to adopt the following puppies:
     | Brook |
-    | Hanna2 |
+    | Hanna |
     When I add them to my shopping cart
     Then total sum of the cost of the puppies must be displayed on the Shopping Cart page
 
@@ -67,7 +67,7 @@ Feature: Main puppies website functionality
 
     Given I want to adopt the following puppies:
     | Brook    |
-    | Hanna2    |
+    | Hanna    |
     And I add them to my shopping cart
     When I click on "Change your mind" on "Shopping Cart" page
     Then I should be redirected to the homepage
