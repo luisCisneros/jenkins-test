@@ -4,7 +4,7 @@ Feature: Main puppies website functionality
   Background: Navigate to puppies.herokuapp website
     Given user is on puppies.herokuapp landing page
 
-  @ts01 @smoke
+  @ts01 @smoke @wip
   Scenario: Adopt one puppy
     As puppy site user, I want to adopt one puppy from puppy list.
 
@@ -19,7 +19,7 @@ Feature: Main puppies website functionality
     Then I should be redirected to the homepage
     And the message "Thank you for adopting a puppy!" should be displayed
 
-  @ts02
+  @ts02 @wip
   Scenario: Adopt two puppies
     As puppy site user, I want to adopt two puppies from puppy list.
 
@@ -36,7 +36,7 @@ Feature: Main puppies website functionality
     Then I should be redirected to the homepage
     And the message "Thank you for adopting a puppy!" should be displayed
 
-  @ts03 @smoke
+  @ts03 @smoke @wip
   Scenario: Two puppies adoption correct amount
     As puppy site user, I want to see the correct amount of my purchase.
 
@@ -73,7 +73,7 @@ Feature: Main puppies website functionality
     Then I should be redirected to the homepage
     And the message "Your car is currently empty" should be displayed
 
-  @ts07 @wip
+  @ts07
   Scenario: Page menu
     Page should contain 6 items menu.
 

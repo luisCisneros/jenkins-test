@@ -8,7 +8,7 @@ pipeline {
 
     parameters {
         string(name: 'URL', defaultValue: 'http://puppies.herokuapp.com/', description:'Enter the URL of the environment where the tests will be executed')
-        choice(name: 'BROWSER', choices: ['Chrome', 'Firefox'], description: 'Select the browser to be used for the tests')
+        choice(name: 'BROWSER', choices: ['Firefox', 'Chrome'], description: 'Select the browser to be used for the tests')
         string(name: 'TIMEOUT', defaultValue: '5', description:'Enter the time (in seconds) to wait before throwing an exception if the elment cannot be located')
         string(name: 'TAGS', defaultValue: '@smoke', description:'Enter the tags of the tests to be run. Enter @all to run the full suite. Supports Cucumber tags expressions like "@[tag-name] and not @[tag-name]"')
     }
